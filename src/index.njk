@@ -4,8 +4,13 @@ layout: base.njk
 ---
 
 <div>
-    <h1>Welcome</h1>
-    <p class="tips"></p>
+  <h1>Welcome</h1>
+  <p class="tips"></p>
+  <ul>
+    {% for article in news.articles %}
+      <li>{{ article.title }}</li>
+    {% endfor %}
+  </ul>
 </div>
 
 <script src="/js/tip.js"></script>
