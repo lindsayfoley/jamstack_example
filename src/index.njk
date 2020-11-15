@@ -8,7 +8,10 @@ layout: base.njk
   <p class="tips"></p>
   <ul>
     {% for article in news.articles %}
-      <li>{{ article.title }}</li>
+      <li>
+        <a href="{{ article.url }}">{{ article.title }}</a>
+        <span>Published <time>{{ article.publishedAt }}</time></span>
+      </li>
     {% endfor %}
   </ul>
 </div>
