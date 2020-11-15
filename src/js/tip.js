@@ -1,6 +1,6 @@
 const tips = [
-    "Start your day with exercise",
-    "But drink some lemon water first",
+    "Start your day with some exercise",
+    "Start your day with a hot drink",
     "No screen time until breakfast",
     "Eat a real breakfast",
     "Set goals for the day"
@@ -8,4 +8,4 @@ const tips = [
 
 const randomTip = tips[Math.floor(Math.random() * tips.length)];
 
-document.querySelector('.tips').append(randomTip);
+document.querySelector('.tip').append(randomTip);

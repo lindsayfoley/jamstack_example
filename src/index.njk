@@ -3,17 +3,39 @@ title: "Home"
 layout: base.njk
 ---
 
-<div>
-  <h1>Welcome</h1>
-  <p class="tips"></p>
-  <ul>
-    {% for article in news.articles %}
-      <li>
-        <a href="{{ article.url }}">{{ article.title }}</a>
-        <span>Published <time>{{ article.publishedAt }}</time></span>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+<main>
+  <h1>Welcome Lindsay 👋</h1>
+
+  <article>
+    <h2>💡 Here's a tip for you:</h2>
+    <p class="tip"></p>
+  </article>
+  <hr />
+
+  <article>
+    <h2>🌈 The weather right now in
+      {{ weather.location.region }}
+      is:</h2>
+    <p>{{ weather.current.condition.text }}
+      with temperatures of
+      {{ weather.current.temp_c }}°C</p>
+    <img src="{{ weather.current.condition.icon }}"/>
+  </article>
+  <hr />
+
+  <article>
+    <h2>🕒 The top news headlines are:</h2>
+    <ol>
+      {% for article in news.articles %}
+        <li>
+          <a href="{{ article.url }}">{{ article.title }}</a>
+          <span>Published
+            <time>{{ article.publishedAt }}</time>
+          </span>
+        </li>
+      {% endfor %}
+    </ol>
+  </article>
+</main>
 
 <script src="/js/tip.js"></script>
