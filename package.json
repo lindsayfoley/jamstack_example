@@ -1,0 +1,15 @@
+{
+  "name": "jamstack-example",
+  "version": "1.0.0",
+  "description": "Jamstack example site",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "author": "Lindsay Foley",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  }
+}
