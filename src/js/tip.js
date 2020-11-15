@@ -8,4 +8,4 @@ const tips = [
 
 const randomTip = tips[Math.floor(Math.random() * tips.length)];
 
-document.querySelector('.tip').append(randomTip);
+document.querySelector('.tip').append(`"${randomTip}"`);
