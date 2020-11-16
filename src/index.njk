@@ -1,25 +1,25 @@
 ---
-title: "Lindsay's Homepage"
+title: "Homepage"
 layout: base.njk
 ---
 
 <main>
-  <h1>Welcome Lindsay 👋</h1>
+  <h1>Hello there 👋</h1>
 
   <article>
-    <h2>💡 Here's a tip for you:</h2>
+    <h2>💡 Here's an inspirational tip for you:</h2>
     <p class="tip"></p>
   </article>
   <hr />
 
   <article>
     <h2>🌈 The weather right now in
-      {{ weather.location.region }}
+      {{ weather.region }}
       is:</h2>
-    <p>{{ weather.current.condition.text }}
+    <p>{{ weather.summary }}
       with temperatures of
-      {{ weather.current.temp_c }}°C</p>
-    <img src="{{ weather.current.condition.icon }}"/>
+      {{ weather.temp }}°C</p>
+    <img src="{{ weather.icon }}"/>
   </article>
   <hr />
 

@@ -13,10 +13,12 @@
       margin: 0;
       font-family: 'Karla', sans-serif;
       text-align: center;
+      background-color: #000000;
+      color: #ffffff;
     }
 
     header {
-      border-top: 20px solid #F37DB2;
+      border-top: 20px solid #009987;
       box-shadow: 0 0.125rem 0.625rem 0 rgba(0,0,0,.08);
       padding: 2rem;
       display: flex;
@@ -30,7 +32,6 @@
 
     nav a {
       padding: 0 2rem;
-      color: black;
       text-decoration: none;
       font-weight: bold;
     }
@@ -38,6 +39,7 @@
     main {
       max-width: 900px;
       margin: 0 auto 4rem;
+      padding: 0 2rem;
     }
 
     h1 {
@@ -53,13 +55,28 @@
       text-align: left;
     }
 
-    li a {
-      color: black;
+    a {
+      color: #ffffff;
     }
 
     hr {
       margin: 2.5rem 0;
-      border-top: 1px solid #F37DB2;
+      border-top: 2px solid #009987;
+      border-bottom: 0;
+    }
+
+    footer {
+      height: 150px;
+      background-color: #181818;
+      color: #B1B1B1;
+      position: relative;
+    }
+
+    small {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 2rem;
     }
   </style>
 
@@ -72,5 +89,8 @@
       </nav>
     </header>
     {{ content | safe }}
+    <footer>
+      <small>Thanks for visiting! 🙏</small>
+    </footer>
   </body>
 </html>
