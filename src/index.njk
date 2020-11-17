@@ -9,19 +9,20 @@ layout: base.njk
   <article>
     <h2>💡 Here's an inspirational tip for you:</h2>
     <p class="tip"></p>
+    <hr/>
   </article>
-  <hr />
 
-  <article>
+  <article id="weather" class="hide">
     <h2>🌈 The weather right now in
-      {{ weather.region }}
+      <span class="region"></span>
       is:</h2>
-    <p>{{ weather.summary }}
+    <p>
+      <span class="summary"></span>
       with temperatures of
-      {{ weather.temp }}°C</p>
-    <img src="{{ weather.icon }}"/>
+      <span class="temp"></span>°C</p>
+    <img class="icon" alt="current weather"/>
+    <hr/>
   </article>
-  <hr />
 
   <article>
     <h2>🕒 The top news headlines are:</h2>

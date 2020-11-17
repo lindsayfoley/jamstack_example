@@ -1,16 +1,21 @@
-const { default: Axios } = require("axios");
-require('dotenv').config();
+const success = (position) => {
+  const lat = position.coords.latitude;
+  const long = position.coords.longitude;
 
-module.exports = async function () {
-    try {
-        const response = await Axios.get(`http://api.weatherapi.com/v1/current.json?key=${process.env.WEATHER_API_KEY}&q=rh2`);
-        return {
-            region: response.data.location.region,
-            summary: response.data.current.condition.text,
-            temp: response.data.current.temp_c,
-            icon: response.data.current.condition.icon,
-        };
-    } catch(error) {
-        console.log(`Unable to get todays weather because of ${error}`);
-    }
+  const url = `/.netflify/functions/weatherapi/?lat=${lat}&lon=${long}`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then(data => {
+      document.querySelector('region').append(data.location.region);
+      document.querySelector('summary').append(data.current.condition.text);
+      document.querySelector('temp').append(data.current.temp_c);
+      document.querySelector('icon').append(data.current.condition.icon);
+      document.querySelector('icon').append(data.current.condition.icon);
+      document.getElementById('weather').classList.remove('hide');
+    });
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
 };
