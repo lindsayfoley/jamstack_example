@@ -4,7 +4,7 @@ require("dotenv").config();
 exports.handler = async function(event, context, callback) {
 
   const { lat, lon } = event.queryStringParameters;
-  const url = `//api.weatherapi.com/v1/current.json?key=${process.env.WEATHER_API_KEY}&q=${lat},${lon}`
+  const url = `https://api.weatherapi.com/v1/current.json?q=${lat},${lon}&key=${process.env.WEATHER_API_KEY}`
 
   const response = await axios.get(url);
   callback(null, {
