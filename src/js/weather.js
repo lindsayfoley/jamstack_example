@@ -14,8 +14,8 @@ const success = (position) => {
         document.querySelector(".icon").textContent = data.current.condition.icon;
         document.querySelector(".weather").classList.remove("hide");
       });
-
-    if(navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(success, error);
-    }
 };
+
+if(navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(success, error);
+}
