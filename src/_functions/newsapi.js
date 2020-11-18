@@ -1,7 +1,7 @@
 const axios = require("axios");
 require("dotenv").config();
 
-exports.handler = async function(callback) {
+exports.handler = async function(event, context, callback) {
 
   const url = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${process.env.NEWS_API_KEY}&pageSize=10`
 
