@@ -3,7 +3,7 @@ require("dotenv").config();
 
 exports.handler = async function(callback) {
 
-  const url = `https://api.weatherapi.com/v1/current.json?q=rh2&key=${process.env.WEATHER_API_KEY}`
+  const url = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${process.env.NEWS_API_KEY}&pageSize=10`
 
   const response = await axios.get(url);
   callback(null, {

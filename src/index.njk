@@ -24,20 +24,12 @@ layout: base.njk
     <hr/>
   </article>
 
-  <article>
+  <article clas="news">
     <h2>🕒 The top news headlines are:</h2>
-    <ol>
-      {% for article in news.articles %}
-        <li>
-          <a href="{{ article.url }}">{{ article.title }}</a>
-          <span>Published
-            <time>{{ article.publishedAt }}</time>
-          </span>
-        </li>
-      {% endfor %}
-    </ol>
+    <div class="newsList"></div>
   </article>
 </main>
 
 <script src="/js/tip.js"></script>
 <script src="/js/weather.js"></script>
+<script src="/js/news.js"></script>
