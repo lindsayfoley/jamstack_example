@@ -1,7 +1,7 @@
 const renderWeather = () => {
-  const url = `/.netlify/functions/weatherapi`;
+  const weatherApi = `/.netlify/functions/weatherapi`;
 
-  fetch(url)
+  fetch(weatherApi)
     .then((response) => response.json())
     .then((data) => {
       document.querySelector(".region").textContent = data.location.name;

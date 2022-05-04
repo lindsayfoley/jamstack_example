@@ -2,7 +2,7 @@ const axios = require("axios");
 require("dotenv").config();
 
 exports.handler = async function (event, context, callback) {
-  const getUsersGeoLocation = navigator.geolocation
+  const getUsersGeoLocation = navigator?.geolocation
     ? navigator.geolocation.getCurrentPosition()
     : undefined;
 
