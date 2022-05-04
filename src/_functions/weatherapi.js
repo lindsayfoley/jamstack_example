@@ -19,7 +19,7 @@ exports.handler = async function (event, context, callback) {
   }
 
   const lat = usersGeoLocation.coords.latitude;
-  const long = sersGeoLocation.coords.longitude;
+  const long = usersGeoLocation.coords.longitude;
   console.log("lat", lat, "long", long);
 
   const weatherApi = `https://api.weatherapi.com/v1/current.json?q=${lat},${long}&key=${process.env.WEATHER_API_KEY}`;
