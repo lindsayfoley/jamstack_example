@@ -3,12 +3,16 @@ require("dotenv").config();
 
 exports.handler = async function (event, context, callback) {
   const getUsersGeoLocation =
-    navigator.geolocation && navigator.geolocation.getCurrentPosition();
+    window.navigator.geolocation &&
+    window.navigator.geolocation.getCurrentPosition();
 
   const usersGeoLocation =
     typeof window !== "undefined" && typeof window.navigator !== "undefined"
       ? getUsersGeoLocation()
       : undefined;
+
+  console.log("window", typeof window !== "undefined");
+  console.log("navigator", typeof window.navigator !== "undefined");
 
   if (!usersLatLong) {
     return null;
