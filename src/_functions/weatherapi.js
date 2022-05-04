@@ -2,29 +2,9 @@ const axios = require("axios");
 require("dotenv").config();
 
 exports.handler = async function (event, context, callback) {
-  const getUsersGeoLocation =
-    navigator?.geolocation && navigator.geolocation.getCurrentPosition();
+  const weatherAPI = `https://api.weatherapi.com/v1/current.json?q=sw1&key=${process.env.WEATHER_API_KEY}`;
 
-  const usersGeoLocation =
-    typeof window !== "undefined" && typeof window.navigator !== "undefined"
-      ? getUsersGeoLocation()
-      : undefined;
-
-  console.log("window", typeof window !== "undefined");
-  console.log("navigator", typeof window.navigator !== "undefined");
-
-  if (!usersLatLong) {
-    return null;
-  }
-
-  const lat = usersGeoLocation.coords.latitude;
-  const long = usersGeoLocation.coords.longitude;
-  console.log("lat", lat, "long", long);
-
-  const weatherApi = `https://api.weatherapi.com/v1/current.json?q=${lat},${long}&key=${process.env.WEATHER_API_KEY}`;
-
-  const response = await axios.get(weatherApi);
-
+  const response = await axios.get(weatherAPI);
   callback(null, {
     statusCode: 200,
     body: JSON.stringify(response.data),
